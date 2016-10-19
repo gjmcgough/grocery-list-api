@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :requests
-  resources :grocery_list_users
-  resources :grocery_lists
-  resources :items
+  resources :grocery_lists, except: :index do
+    resources :items, only: [:create, :destroy]
+    resources :new_subscriber, only: :create
+    resources :subscriber, only: :destroy
+    resources :request, only: [:create, :destroy]
+  end
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

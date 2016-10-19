@@ -1,15 +1,15 @@
 class GroceryListsController < ApplicationController
   before_action :set_grocery_list, only: [:show, :edit, :update, :destroy]
 
-  # GET /grocery_lists
-  # GET /grocery_lists.json
-  def index
-    @grocery_lists = GroceryList.all
-  end
-
   # GET /grocery_lists/1
   # GET /grocery_lists/1.json
-  def show
+  def search
+    @user = User.find(session[:user_id])
+    @grocery_list = GroceryList.find_by(name: params[:search])
+    if @grocery_list
+      # if gl found send to client in json
+      @grocery_list.to_json
+    end
   end
 
   # GET /grocery_lists/new
