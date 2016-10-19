@@ -1,0 +1,1 @@
+json.partial! "grocery_list_users/grocery_list_user", grocery_list_user: @grocery_list_user

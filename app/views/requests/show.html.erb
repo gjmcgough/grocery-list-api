@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Grocery list:</strong>
+  <%= @request.grocery_list_id %>
+</p>
+
+<p>
+  <strong>Subscriber:</strong>
+  <%= @request.subscriber_id %>
+</p>
+
+<p>
+  <strong>Null:</strong>
+  <%= @request.null %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

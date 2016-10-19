@@ -1,0 +1,1 @@
+json.array! @grocery_list_users, partial: 'grocery_list_users/grocery_list_user', as: :grocery_list_user
